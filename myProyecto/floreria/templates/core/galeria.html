@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+
+{% block titulo %}
+    Galeria de Peliculas - Cine Romeo
+{% endblock titulo %}
+
+{% load static %}
+
+{% block contenido %}
+
+        <div class="text-center">
+            <h2>Listado Flores</h2>
+        </div>
+        <div id="productsView" class="container">
+            <h3>Rosa Azul</h3>
+            <img src="{% static 'core/img/rosaazul.png' %}">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, praesentium. Doloribus adipisci aperiam architecto?
+                Id a dignissimos sint, reiciendis explicabo, nobis ipsum, ut quos pariatur illum eligendi repellat officia
+                dolor.
+            </p>
+            <div>Ver Flor</div>
+            <div>
+                <a href="">Eliminar</a>
+            </div>
+        </div>
+        {% for f in listafloor %}
+        <div id="productsView" class="container">
+            <h3>{{f.name}}</h3>
+            <img src="{{ f.fotografia.url }}">
+            <p>{{f.descripcion}} </p>
+            <div>Ver Flor</div>
+            <div>
+                <a href="{% url 'ELIMINAR' f.name %}">Eliminar</a>
+            </div>
+            <div>
+                <a href="{% url 'AGREGAR_CARRO' f.name %}">Agregar a Carro</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    <h1>{{msg}}</h1>
+{% endblock contenido %}

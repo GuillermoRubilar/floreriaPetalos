@@ -1,0 +1,96 @@
+*{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+.menu{
+    background-color: rgba(158, 4, 4, 0.603);
+
+}
+
+
+.bienvenido{
+    background-color: rgba(24, 138, 24, 0.534);
+    
+}
+
+.bienvenido h1{
+    color: aliceblue;
+    text-align: center;
+    
+}
+
+.bienvenido img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bienvenido p{
+    color: aliceblue;
+    text-align: center;
+}
+
+.cuadro{
+    height: 300px;
+    background-color:  rgba(158, 4, 4, 0.603);
+}
+
+.h1Me{
+    text-align: center;
+    font-size: 25px;
+    margin-top: -55px;
+    
+}
+
+.pMe{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imgIndex{
+    margin-left: 12px;
+}
+
+.imgIndex img{
+
+    height: 150px;
+}
+
+.hola{
+    margin-left: 12px;
+}
+
+.iframe{
+    width: 100%;
+    height: 550px;
+}
+
+
+@media(max-width:600px){
+    .bienvenido img{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 150px;
+        
+    }
+    .cuadro{
+        height: auto;
+        background-color:  rgba(158, 4, 4, 0.603);
+    }
+
+    .h1Me{
+        text-align: center;
+        font-size: 25px;
+        margin-top: 0px;
+        
+    }
+    .iframe{
+        width: 100%;
+        height: 400px;
+    }
+
+}

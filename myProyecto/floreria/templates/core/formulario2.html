@@ -1,0 +1,102 @@
+{% extends "core/base.html" %}
+
+{% block titulo %}
+    Formulario de Categoria
+{% endblock titulo %}
+
+{% load static %}
+
+{% block contenido %}
+
+</header>
+    <section>
+        <div>
+            <form id="formulario" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <center>
+                    <h1>Formulario de Ingreso de Flores</h1>
+                    <table>
+                        <tr>
+                            <td>Nombre:</td>
+                            <td>
+                                <input class="form-control" type="text" name="txtNombre"
+                                    placeholder="Introduzca el Nombre">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Valor:</td>
+                            <td>
+                                <input class="form-control" type="number" name="txtValor"
+                                    placeholder="Introduzca el Valor">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Stock:</td>
+                            <td>
+                                 <input class="form-control" type="number" name="txtStock" placeholder="Introduzca el Stock">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Categoria:</td>
+                            <td>
+                                <select class="form-control" name="cboCategoria">
+                                     {% for datos in lista %}
+                                     <option>{{datos.name}}</option>
+                                     {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Estado:</td>
+                            <td>
+                                <input class="form-control" type="text" name="txtEstado"
+                                    placeholder="Introduzca el Estado del Producto">
+                            </td>
+                        </tr>
+                        <!--<tr>
+                            <td>Estado:</td>
+                            <td>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="txtEstado">
+                                    <label class="form-check-label">Marque la casilla si el producto esta
+                                            disponible</label>
+                                </div>
+                            </td>
+                        </tr>-->
+                        <tr>
+                            <td>
+                                <div class="form-group"></div>
+                                <label>Descripcion:</label>
+                            <td>
+                                <textarea class="form-control" name="txtDescripcion" rows="3"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <div class="form-group">
+                            <td>Seleccione Imagen:</td>
+                            <td>
+                                <input class="form-control-file" type="file" name="txtImagen">
+                            </div>
+                            </td>
+                        </tr>  
+                        <tr>
+                            <td colspan="2">
+                                <button type="submit" class="btn btn-primary" value="Grabar">Grabar</button>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </form>
+            {% if sw %}
+            <script>
+                setTimeout(function () {
+                    document.getElementById("mensaje").innerHTML = ''
+                }, 2000)
+            </script>
+            <div id="mensaje">
+                <b>{{msg}}</b>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock contenido %}

@@ -1,0 +1,19 @@
+</html>
+
+    {% extends "core/base.html" %}
+
+    {% block titulo %}
+        Main Principal - Floreria Petalos
+    {% endblock titulo %}
+
+    {% load static %}    
+
+    {% block contenido %}
+        <div class="text-center">
+            <h2>Floreria Petalos</h2>
+                <div class="text-center">
+                    <img src="{% static 'core/img/bannerpetalos.jpg' %}" class="img-fluid"  alt="Responsive image">
+                </div>
+        </div>
+    {% endblock contenido %}
+       
